@@ -1,6 +1,7 @@
 const { connect, connection } = require('mongoose');
-
-const connectionString = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/studentsDB';
+const { requiredPaths } = require('../models/reaction');
+require('dotenv').config()
+const connectionString = process.env.MONGODB_URI || process.env.mongoDB_URL;
 
 connect(connectionString, {
   useNewUrlParser: true,
